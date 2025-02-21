@@ -114,3 +114,97 @@ print(simultaneos)
 #-------------------------------------------------------------------------------
 '''Es conocido que los elementos de una lista pueden ser de cualquier tipo; inclusive otra lista (ej: [3.14, ``Hola Doc!'', [911, ``Los chicos malos'']]). Escriba un programa que verifique si una lista contiene una sublista.'''
 
+'''
+tecnologias = ["python", 3, "github", "sql", ["ruby, tailwind, typescript, css"], "html"]
+
+for sublista in tecnologias:
+    if type(sublista) == list:
+        print("La lista contiene la sublista: ", sublista)
+'''
+#-------------------------------------------------------------------------------
+'''En el stock de un almacen se tiene las siguientes referencias:
+Brocha & 500  \\
+\hline
+Espatula & 2000 \\
+\hline
+Pala & 54000 \\
+\hline
+Carretilla & 300000 \\
+\hline
+Casco & 55000 \\
+\hline
+Soldador & 230000 \\
+\hline
+Alicate & 10000 \\
+\hline
+Destornillador & 3000 \\
+\hline
+Maza & 60000 \\
+\hline
+Nivel & 24000 \\
+\hline
+Flexometro & 76000 \\
+\hline
+Hacha & 32000 \\
+\hline
+Pico & 74000 \\
+\hline
+Rastrillos & 56000\\
+\hline
+
+Escriba un programa que ordene este stock por su ``Producto'' '''
+
+'''
+stock = {"Brocha": 500, "Espatula": 2000, "Pala": 54000, "Carretilla": 300000, "Casco": 55000, "Soldador": 230000, "Alicate": 10000, "Destornillador": 3000, "Maza": 60000, "Nivel": 24000, "Flexometro": 76000, "Hacha": 32000, "Pico": 74000, "Rastrillos": 56000}
+
+#comprension de diccionario
+#{clave: valor for item in iterable}
+stockOrdenado = {key: stock[key] for key in sorted(stock)}
+
+print(stockOrdenado)
+'''
+
+'''Debe de crear una programa que almacene en una estructura la información contenida en la siguiente tabla:
+\textbf{Banda} & \textbf{Miembros} \\
+\hline
+    Queen & Freddie Mercury, Brian May, Roger Taylor y John Deacon  \\
+    \hline
+    The Doors & Jim Morrison, Robby Krieger, Ray Manzarek y John Densmore \\
+    \hline
+    Green Day & Billie Joe Armstrong, Mike Dirnt  y Tré Cool  \\
+    \hline
+    Rolling Stones & Mick Jagger, Keith Richards, Charlie Watts y Ron Wood  \\
+    \hline
+    Led zeppelin & Robert Plant, Jimmy Page,  John Paul Jones y John Bonham.  \\
+    \hline
+    Black Sabbath & Ozzy Osbourne, Tony Iommi, Bill Ward y Geezer Butler \\
+    \hline
+    Soundgarden & Chris Cornell, Kim Thayil, Matt Cameron y Ben Shepherd. \\
+    \hline
+    Alice in Chains &  Layne Staley, Jerry Cantrell, Sean Kinney y Mike Starr \\
+    \hline
+    
+Así mismo en programa debe:
+
+\item Ordenar alfabéticamente la tabla y 
+\item Mostrar en pantalla SOLAMENTE el vocalista de cada banda (que sería el primer nombre de los miembros de la misma) JUNTO con el nombre su respectiva banda.
+'''
+
+bandas = {
+    "Queen": ["Freddie Mercury", "Brian May", "Roger Taylor", "John Deacon"],
+    "The Doors": ["Jim Morrison", "Robby Krieger", "Ray Manzarek", "John Densmore"],
+    "Green Day": ["Billie Joe Armstrong", "Mike Dirnt", "Tré Cool"],
+    "Rolling Stones": ["Mick Jagger", "Keith Richards", "Charlie Watts", "Ron Wood"],
+    "Led Zeppelin": ["Robert Plant", "Jimmy Page", "John Paul Jones", "John Bonham"],
+    "Black Sabbath": ["Ozzy Osbourne", "Tony Iommi", "Bill Ward", "Geezer Butler"],
+    "Soundgarden": ["Chris Cornell", "Kim Thayil", "Matt Cameron", "Ben Shepherd"],
+    "Alice in Chains":["Layne Staley", "Jerry Cantrell", "Sean Kinney", "Mike Starr"],
+}
+
+bandasOrdendas = {k: bandas[k] for k in sorted(bandas)}
+for banda, miembros in bandasOrdendas.items():
+    vocalista = miembros[0]
+    #ljust para cantidad de caracteres a ocupar
+    print(f"Banda: {banda.ljust(18)}","|", f"Vocalista: {vocalista}")
+    
+
