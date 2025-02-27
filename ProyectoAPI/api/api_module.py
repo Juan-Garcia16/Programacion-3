@@ -2,6 +2,17 @@ import pandas as pd
 from sodapy import Socrata
 
 def consulta_covid(nombre_departamento, limite_regristros):
+    """Consulta los casos de COVID-19 en un departamento especifico de Colombia utilizando la API de Datos Abiertos.
+
+    Args:
+        nombre_departamento: Nombre del departamento a consultar.
+        limite_regristros: Numero maximo de registros a obtener.
+
+    Returns:
+        pandas.DataFrame: Un DataFrame que contiene los resultados de la consulta con las columnas seleccionadas.
+        None: Si no se encontraron registros para el departamento especificado.
+    """
+    
     #Conexion con la API de Datos Abiertos
     client = Socrata("www.datos.gov.co", None)
     
