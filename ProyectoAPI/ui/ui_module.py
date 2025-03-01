@@ -20,3 +20,4 @@ def mostrar_resultados(dataframe):
     
     #Mostrar los resultados en formato de tabla
     print(tabulate(dataframe, headers="keys", tablefmt="pretty", showindex=False, stralign="left"))
+
